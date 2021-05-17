@@ -20,6 +20,8 @@ id_index = []
 #EL Api donde se encuentra la lista en formato JSON de las peliculas x genero. 
 #Diccionario de las api que vamos a scrapear.
 dic_categorias = {
+        
+        #Peliculas
         'accionyAventura' : "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&quantity=50&from=0&level_id=GPS&order_way=ASC&order_id=50&filter_id=39263"
         ,'bibliografica':   "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75889"
         ,'cienciaFiccion' : "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75890"
@@ -36,7 +38,8 @@ dic_categorias = {
         ,'musica' :         "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75901"
         ,'romanticas' :     "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75902"
         ,'terrorySuspenso': "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75903"
-
+        
+        #Alquilables
         ,'rn_AccionyAventura':  "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75379"
         ,'rn_Animevideojuego':  "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75948"
         ,'rn_Bibliografica':    "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75380"
@@ -52,6 +55,27 @@ dic_categorias = {
         ,'rn_Musica':           "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75950"
         ,'rn_Romanticas':       "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=74966"
         ,'rn_TerrorySuspenso':  "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75951"
+        
+        #Series
+        ,'se_AccionyAventura' :   "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&quantity=10000&from=0&level_id=GPS&order_way=ASC&order_id=50&filter_id=39267"
+        ,'se_Animevideojuego' :   "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75742"
+        ,'se_Bibliografica' :     "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75743"
+        ,'se_CienciaFiccion' :    "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75744"
+        ,'se_Clasicas' :          "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75746"
+        ,'se_Comedias'  :	  "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75747"
+        ,'se_Deportes' :          "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75748"
+        ,'se_Documentales' :      "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75749"
+        ,'se_Drama' :             "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75750"
+        ,'se_Espanolas' :         "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75751"
+        ,'se_Familiares' :        "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75752"
+        ,'se_Historicas' :        "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75753"
+        ,'se_Infantiles' :        "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75754"
+        ,'se_LartinoAmericanas' : "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75755"
+        ,'se_Musica' :            "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75756"
+        ,'se_Romanticas' :        "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75757"
+        ,'se_TerrorySuspenso' :   "https://mfwkweb-api.clarovideo.net/services/content/list?device_id=web&device_category=web&device_model=web&device_type=web&device_so=Opera&format=json&device_manufacturer=generic&authpn=webclient&authpt=tfg1h3j4k6fd7&api_version=v5.92&region=argentina&HKS=8ncr005l9uepvbc2g2mvjvph96&order_id=200&order_way=DESC&level_id=GPS&from=0&quantity=10000&node_id=75758"
+
+        
         }
 
 
@@ -66,29 +90,29 @@ for categoria in dic_categorias.values() :
     for peli in range(len(data['response']['groups'])):
         
         #Index por ID
-        id_index.append(data['response']['groups'][peli]["id"].text)
+        id_index.append(data['response']['groups'][peli]["id"])
 		#Titulo
         try:    #Uso Try y Except para que la aplicacion no se corte ante cualquier dato vacio. 
                 #De esta forma no perdemos los datos recolectados
-                title.append(data['response']['groups'][peli]["title"].text) 
+                title.append(data['response']['groups'][peli]["title"]) 
         except:
                 title.append('N/A')
 
         #Titulo Original
         try:
-                original_title.append(data['response']['groups'][peli]["title_original"]).text
+                original_title.append(data['response']['groups'][peli]["title_original"])
         except:
                 original_title.append('N/A')
 
         #Año
         try:
-                years.append(data['response']['groups'][peli]["year"].text)
+                years.append(data['response']['groups'][peli]["year"])
         except:
                 years.append('N/A')
 
         #Duracion
         try:
-                duration.append(data['response']['groups'][peli]["duration"].text)
+                duration.append(data['response']['groups'][peli]["duration"])
         except:
                 duration.append("N/A")
         
@@ -103,7 +127,7 @@ for categoria in dic_categorias.values() :
         
         #Descripcion
         try:
-                description.append(data['response']['groups'][peli]["description"].text)
+                description.append(data['response']['groups'][peli]["description"])
         except:
                 description.append("N/A")
         
@@ -119,15 +143,16 @@ for categoria in dic_categorias.values() :
                 package.append("Free, Download")
             elif data['response']['groups'][peli]["format_types"] == "susc,briefcase,download":
                 package.append("Briefcase, Download, Suscripcion")
-            else:
-                package.append("N/A")
+            elif data['response']['groups'][peli]["format_types"] == "free":
+                package.append("Free")
+                package.append(data['response']['groups'][peli]["format_types"])
 
         except:
                 package.append("N/A")
         
         #Clasificación por edades
         try:
-            rating_code.append(data['response']['groups'][peli]["rating_code"].text)
+            rating_code.append(data['response']['groups'][peli]["rating_code"])
         except:
             rating_code.append("N/A")
 
@@ -141,13 +166,9 @@ df_duplicados = pd.DataFrame(peliculas, columns=columns, index= id_index)      #
 
 df = df_duplicados.drop_duplicates()      #Eliminamos los duplicados
 
-#write = pd.ExcelWriter('ClaroVideosDefinitivo.xlsx')
-#df.to_excel(write)
-#write.save()
-
-with open('claro-video.json', "w", encoding="utf-8") as file:
-    str((df)).encode('utf-8')
-    json.dump((df), file, indent=4, ensure_ascii=False)
+write = pd.ExcelWriter('ClaroVideos-seriesypeliculas.xlsx')
+df.to_excel(write)
+write.save()
 
 #Chequeamos que el codigo corrio por completo
 print("La casa esta en orden")
